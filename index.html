@@ -628,6 +628,15 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+// SECTION COVER — 섹션이 위로 올라오며 덮는 효과
+const sections = document.querySelectorAll('section, footer');
+sections.forEach((sec, i) => {
+  if (i === 0) return;
+  sec.style.position = 'relative';
+  sec.style.zIndex = 10 + i;
+  sec.style.boxShadow = '0 -16px 56px rgba(28,20,8,0.2)';
+});
+
 // REVEAL on scroll
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
@@ -637,7 +646,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.08 });
 reveals.forEach(el => observer.observe(el));
 
 // Lang buttons
