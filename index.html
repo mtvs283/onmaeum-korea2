@@ -56,8 +56,9 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
   line-height: 1;
   white-space: nowrap;
 
-  opacity: 1;
-  clip-path: inset(0 100% 0 0);
+ opacity: 1;
+clip-path: inset(0 0 0 0);
+-webkit-clip-path: inset(0 0 0 0);
 
   text-shadow: 0 2px 4px rgba(0,0,0,0.18);
 
@@ -68,16 +69,19 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
 @keyframes brushWrite {
   0% {
     clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
     filter: blur(3px);
   }
 
   80% {
     clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
     filter: blur(1px);
   }
 
   100% {
     clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
     filter: blur(0);
   }
 }
