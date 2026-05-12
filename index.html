@@ -106,7 +106,52 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
 .hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s 1.3s ease both}
 .hero-scroll span{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
 .scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s ease-in-out infinite}
+.brush-overlay{
+  position:absolute;
+  left:50%;
+  top:34%;
+  transform:translateX(-50%);
+  z-index:4;
 
+  font-family:'KimJungchul','Noto Serif KR',serif;
+  font-size:clamp(52px,6vw,110px);
+  font-weight:700;
+
+  color:#8b0000;
+
+  letter-spacing:-0.06em;
+  white-space:nowrap;
+
+  opacity:0;
+  filter:blur(8px);
+
+  text-shadow:
+    0 5px 10px rgba(0,0,0,0.35),
+    0 12px 18px rgba(80,0,0,0.24);
+
+  animation:brushDrop 1.4s ease-out forwards;
+  pointer-events:none;
+}
+
+@keyframes brushDrop{
+  0%{
+    opacity:0;
+    transform:translate(-50%,-90px);
+    filter:blur(8px);
+  }
+
+  70%{
+    opacity:1;
+    transform:translate(-50%,8px);
+    filter:blur(2px);
+  }
+
+  100%{
+    opacity:1;
+    transform:translate(-50%,0);
+    filter:blur(0);
+  }
+}
 /* PHILOSOPHY */
 .philosophy{padding:120px 80px;background:var(--ink);position:relative;overflow:hidden}
 .philosophy::after{content:'文';position:absolute;right:-60px;top:-80px;font-family:'KimJungchul','Noto Serif KR',serif;font-size:440px;font-weight:700;color:rgba(196,136,42,0.035);pointer-events:none;user-select:none}
