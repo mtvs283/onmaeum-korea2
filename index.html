@@ -44,7 +44,7 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
   transform: translateX(-50%);
   z-index: 5;
 
-  font-family: 'KimJungchul','Noto Serif KR',serif;
+  font-family: 'KimJungchul';
   font-size: clamp(44px, 6vw, 96px);
   font-weight: 700;
   color: #8b0000;
@@ -117,7 +117,7 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
   font-size:clamp(52px,6vw,110px);
   font-weight:700;
 
-  color:#8b0000;
+  color:#1b140d;
 
   letter-spacing:-0.06em;
   white-space:nowrap;
@@ -141,10 +141,14 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
   }
 
   70%{
-    opacity:1;
-    transform:translate(-50%,8px);
-    filter:blur(2px);
-  }
+ opacity:.35;
+ transform:translate(-50%,8px);
+}
+
+100%{
+ opacity:1;
+ transform:translate(-50%,0);
+}
 
   100%{
     opacity:1;
