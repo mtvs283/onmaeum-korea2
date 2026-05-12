@@ -40,8 +40,9 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
   .brush-overlay {
   position: absolute;
   left: 50%;
-  top: 47%;
-  transform: translateX(-50%) scaleX(1.12);
+  top: 43%;
+  transform: translate(-50%, 0) scaleX(1.18);
+  transform-origin: center center;
   z-index: 5;
 
   font-family: 'Shilla_Culture(B)';
@@ -65,21 +66,22 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
 @keyframes brushDrop {
   0% {
     opacity: 0;
-    transform: translate(-50%, -90px);
+    transform: translate(-50%, -90px) scaleX(1.18);
     filter: blur(8px);
   }
 
   72% {
     opacity: 1;
-    transform: translate(-50%, 8px);
+    transform: translate(-50%, 8px) scaleX(1.18);
     filter: blur(2px);
   }
 
   100% {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0) scaleX(1.18);
     filter: blur(0);
   }
+}
 }
 .nav-links a:hover{color:var(--gold)}
 .nav-right{display:flex;align-items:center;gap:20px}
