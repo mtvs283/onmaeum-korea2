@@ -37,6 +37,49 @@ nav.scrolled{background:rgba(247,242,232,0.96);backdrop-filter:blur(16px);paddin
 .footer-stamp-img:hover{opacity:1}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
 .nav-links a{text-decoration:none;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink2);letter-spacing:.04em;transition:color .2s}
+  .brush-overlay {
+  position: absolute;
+  left: 50%;
+  top: 39%;
+  transform: translateX(-50%);
+  z-index: 5;
+
+  font-family: 'KimJungchul','Noto Serif KR',serif;
+  font-size: clamp(44px, 6vw, 96px);
+  font-weight: 700;
+  color: #8b0000;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+
+  opacity: 0;
+  filter: blur(8px);
+  text-shadow:
+    0 5px 8px rgba(0,0,0,0.35),
+    0 12px 18px rgba(80,0,0,0.22);
+
+  animation: brushDrop 1.35s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes brushDrop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -90px);
+    filter: blur(8px);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translate(-50%, 8px);
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    filter: blur(0);
+  }
+}
 .nav-links a:hover{color:var(--gold)}
 .nav-right{display:flex;align-items:center;gap:20px}
 .nav-langs{display:flex;gap:4px}
